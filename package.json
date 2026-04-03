@@ -1,0 +1,53 @@
+{
+  "name": "pastetrap",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local browser-side detection for paste-scam, ClickFix and fake verification pages.",
+  "type": "module",
+  "author": "Wythwool",
+  "license": "MIT",
+  "homepage": "https://github.com/Nullbit1/pastetrap",
+  "bugs": {
+    "url": "https://github.com/Nullbit1/pastetrap/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nullbit1/pastetrap.git"
+  },
+  "scripts": {
+    "clean": "node -e \"import('node:fs/promises').then(fs => fs.rm('dist', { recursive: true, force: true }))\"",
+    "manifest": "node scripts/sync-manifest.mjs",
+    "dev": "npm run manifest && vite build --watch",
+    "build": "npm run manifest && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "package": "npm run build && node scripts/package-release.mjs",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run build",
+    "demo": "node scripts/demo-server.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "@types/node": "^22.13.10",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "archiver": "^7.0.1",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "jsdom": "^26.0.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.0",
+    "vitest": "^3.0.9"
+  }
+}
