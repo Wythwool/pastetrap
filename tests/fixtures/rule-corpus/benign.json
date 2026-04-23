@@ -1,0 +1,11 @@
+[
+  {
+    "name": "developer docs npm install",
+    "url": "https://docs.example/install",
+    "title": "Developer documentation quick start",
+    "bodyText": "This is a normal developer documentation page with ordinary package-manager examples.",
+    "codeBlocks": ["npm install react vite", "npm run build"],
+    "expectedMaximumLevel": "info",
+    "expectedRules": ["developer-doc-context"]
+  }
+]

